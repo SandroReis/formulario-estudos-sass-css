@@ -1,0 +1,123 @@
+@import 'colors';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 60%;
+  height: 100vh;
+}
+p {
+  display: hidden;
+}
+
+body {
+  background: clr(neutral);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 500 1.6rem Poppins;
+}
+
+header {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba($color: #fff, $alpha: 0.05);
+  padding: 4em;
+  width: 100%;
+  height: 100%;
+}
+
+.form-wrapper .control-input {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 1em;
+  input,
+  select {
+    background-color: #fff;
+    width: 100%;
+    padding: 0.4em;
+    border-radius: 0.4em;
+    margin-top: 0.4em;
+    
+  }
+  option {
+    background-color: #fff;
+  }
+
+  select {
+    padding: 0.6em;
+
+  }
+
+  #optional {
+    display: flex;
+    position: relative;
+    p {
+      position: absolute;
+      bottom: 0;
+      left: 3em;
+      margin-left: 0.4em;
+      font-size: 0.7em;
+    }
+  }
+}
+
+input:focus {
+  box-shadow: 0 0 5px green; // if you want to change the shadow also
+  border-color: green;
+}
+@media (min-width: 700px) {
+
+  body {
+    font: 500 1.8rem Poppins;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: 'header header form form' 'header header form form' 'header header form form';
+  }
+
+  header {
+    grid-area: header;
+    h1 {
+      margin-left: 2em;
+      margin-bottom: 2em;
+    }
+    p {
+      margin-left: 5em;
+      color: rgba($color: #fff, $alpha: .6);
+      font-size: .8em;
+      margin-right: 4em;
+      text-align: justify;
+      display: block;
+    }
+  }
+  .form-wrapper {
+    grid-area: form;
+    width: 100%;
+    height: 100%;
+  }
+}
