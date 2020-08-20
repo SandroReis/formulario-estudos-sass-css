@@ -21,6 +21,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("https://i.ibb.co/3rP7Dtg/pexels-negative-space-169573.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
 }
 .page-content {
   width: 100%;
@@ -49,27 +53,39 @@ header {
     }
   }
 }
-
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  background-color: #12131a;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+}
 main {
   display: flex;
   flex-direction: column;
   margin-left: 0.6em;
   align-items: center;
   .img-card {
+    background-color: #12131a;
+    color: white;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 500px;
     display: flex;
     padding-right: 0.6em;
     flex-direction: column;
     align-items: center;
     img {
+      margin: .6em;
       max-width: 300px;
       border-radius: 0.6em;
     }
     h2 {
       width: 100%;
       text-align: center;
-      border-top: 1px solid black;
+      border-top: 1px solid white;
     }
     .curso {
       padding-bottom: 1em;
@@ -83,8 +99,11 @@ main {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   main {
     align-items: flex-start;
+    .img-card {
+      max-width: 400px;
+    }
   }
 }

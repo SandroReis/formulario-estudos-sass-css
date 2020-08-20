@@ -29,6 +29,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url("https://i.ibb.co/3rP7Dtg/pexels-negative-space-169573.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-content {
@@ -69,6 +73,17 @@ header nav a {
   padding: 0 1em;
 }
 
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  background-color: #12131a;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -84,9 +99,11 @@ main {
 }
 
 main .img-card {
+  background-color: #12131a;
+  color: white;
   -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
+  max-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,6 +118,7 @@ main .img-card {
 }
 
 main .img-card img {
+  margin: .6em;
   max-width: 300px;
   border-radius: 0.6em;
 }
@@ -108,7 +126,7 @@ main .img-card img {
 main .img-card h2 {
   width: 100%;
   text-align: center;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
 }
 
 main .img-card .curso {
@@ -122,11 +140,14 @@ main .img-card .description {
   margin-bottom: 1.2em;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   main {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+  main .img-card {
+    max-width: 400px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
