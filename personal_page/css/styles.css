@@ -117,7 +117,9 @@ main .img-card .curso {
 
 main .img-card .description {
   text-align: justify;
-  margin: 1.2em;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+  margin-bottom: 1.2em;
 }
 
 @media (min-width: 700px) {
