@@ -14,9 +14,11 @@ body {
 a {
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 body {
+  overflow: hidden;
   background: #fff;
   color: #200a20;
   display: -webkit-box;
@@ -39,6 +41,23 @@ body {
   width: 100%;
 }
 
+.page-content .div-1-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background-color: yellowgreen;
+  width: .6em;
+  height: .6em;
+}
+
+.page-content .div-1-hover:hover {
+  padding: 4em !important;
+  z-index: 99;
+  background-color: red;
+  width: 2em;
+}
+
 body,
 input,
 button,
@@ -49,6 +68,7 @@ textarea {
 header {
   background-color: #12131a;
   width: 100%;
+  height: 4em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,11 +77,10 @@ header {
           justify-content: flex-end;
   -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  margin-bottom: 0.5em;
 }
 
 header nav {
-  padding: 1em;
+  padding: 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,10 +92,13 @@ header nav a {
   padding: 0 1em;
 }
 
+header nav a:hover {
+  font-size: 120%;
+}
+
 .footer-wrapper {
   position: absolute;
   bottom: 0;
-  display: block;
   background-color: #12131a;
   color: white;
   width: 100%;
@@ -92,10 +114,58 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 0.6em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-height: 100%;
+}
+
+main .tres-colunas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+main .nav-esquerda {
+  margin-left: 0;
+  background-color: #12131a;
+  width: 20%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .card-wrapper {
+  width: 60%;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .nav-direta {
+  background-color: red;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .img-card {
@@ -123,14 +193,19 @@ main .img-card img {
   border-radius: 0.6em;
 }
 
+main .img-card h2::first-letter {
+  color: yellow;
+}
+
 main .img-card h2 {
   width: 100%;
   text-align: center;
   border-top: 1px solid white;
 }
 
-main .img-card .curso {
-  padding-bottom: 1em;
+main .img-card .curso::first-letter {
+  color: yellow;
+  font-size: 2em;
 }
 
 main .img-card .description {
@@ -138,6 +213,11 @@ main .img-card .description {
   margin-left: 1.2em;
   margin-right: 1.2em;
   margin-bottom: 1.2em;
+}
+
+main .img-card .description::first-letter {
+  font-size: 2em;
+  color: yellow;
 }
 
 @media (min-width: 800px) {

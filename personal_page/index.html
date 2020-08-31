@@ -14,29 +14,55 @@
     <div class="page-content">
       <header>
         <nav class="useful-links">
+          <a onmouseover="mouseOver()" onmouseout="mouseOut()" onclick="mouseClick()" href="#div1">Div 1 hover...</a>
           <a href="https://unifei.edu.br/">Unifei</a>
           <a href="https://github.com/SandroReis">GitHub</a>
           <a href="https://www.linkedin.com/in/sandro-ricardo-dos-reis-08a491159/">Linkedin</a>
         </nav>
       </header>
+
       <main class="grid-container">
-        <div class="img-card">
-          <div class="inside-img">
-            <img
-              src="https://avatars3.githubusercontent.com/u/21177676?s=460&u=31f3eca56f7dea3a2271d7e08e86f6607a0e460e&v=4"
-              alt=""
-            />
+        <div class="tres-colunas">
+          <div class="nav-esquerda">
+            <h2>navbar-esquerda</h2>
           </div>
-          <h2>Sandro Reis</h2>
-          <p class='curso'><i>Sistemas de Informação</i></p>
-          <p class='description'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis fuga dignissimos officiis magnam quasi veritatis iure accusamus dolores. Voluptas illum reprehenderit excepturi ab magni officia sunt doloribus ipsum fugit labore.
-          </p>
+          <div class="card-wrapper">
+            <div class="img-card">
+              <div class="inside-img">
+                <img
+                  src="https://avatars3.githubusercontent.com/u/21177676?s=460&u=31f3eca56f7dea3a2271d7e08e86f6607a0e460e&v=4"
+                  alt=""
+                />
+              </div>
+              <h2>Sandro Reis</h2>
+              <p class='curso'><i>Sistemas de Informação</i></p>
+              <p class='description'>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis fuga dignissimos officiis magnam quasi veritatis iure accusamus dolores. Voluptas illum reprehenderit excepturi ab magni officia sunt doloribus ipsum fugit labore.
+              </p>
+            </div>
+
+          </div>
+          <div class="nav-direta">
+            <h2>navbar-direita</h2>
+          </div>
+
         </div>
       </main>
+      <div id="mouseOverElement" class="div-1-hover"></div>
       <footer class="footer-wrapper">
         &copy; apenas um footer qualquer
       </footer>
     </div>
+    <script>
+      function mouseOver() {
+      document.getElementById("mouseOverElement").style.padding = "2em";
+      }
+      function mouseOut() {
+      document.getElementById("mouseOverElement").style.padding = ".4em";
+      }
+      function mouseClick(){
+
+      }
+    </script>
   </body>
 </html>
