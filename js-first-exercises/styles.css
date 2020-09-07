@@ -1,0 +1,8 @@
+table, th, td {
+  margin: 1em;
+  border: 1px solid black;
+}
+
+.to-hide {
+  visibility: hidden;
+}
