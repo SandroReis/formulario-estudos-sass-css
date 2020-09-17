@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="createTableStars1()">Criar tabela de estrelas</button>
+    <div id="main">
+      <span id='butao' onclick="lightItUp()">Acender!</span>
+      <script src="estrelas.js"></script>
+    </div>
+  </body>
+  <style>
+    body {
+      background-color: black;
+      max-width: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+    #main div {
+      justify-content: space-around;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1em;
+    }
+    button {
+      max-width: 6em;
+      margin: 1em;
+      max-height: 4em;
+    }
+    #butao {
+      color: black;
+      margin: 1em;
+      padding: .4em;
+      cursor: pointer;
+      border-radius: .4em;
+      background-color: white;
+    }
+    span {
+      color: white;
+    }
+    img {
+      width: 1em;
+    }
+  </style>
+</html>
