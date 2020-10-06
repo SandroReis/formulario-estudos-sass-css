@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "1d83de14-b96f-4705-86ac-588643b3543c",
+		"name": "Web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Adicionar cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sandro\",\n    \"cpf\":\"123.132.123-13\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/addClient",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibir todos clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.104:3000/all",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"104"
+					],
+					"port": "3000",
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por nome",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sandro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/getClientByName",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getClientByName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sandro\",\n    \"cpf\":\"123.132.123-13\",\n    \"newName\":\"Sandro Updated\",\n    \"newCpf\":\"123123132132\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/updateClient",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"updateClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por CPF",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf\":\"123.123.111-22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/getClientByCPF",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getClientByCPF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleter por CPF",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf\":\"123.132.123-13\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/deleteClientByCPF",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deleteClientByCPF"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
