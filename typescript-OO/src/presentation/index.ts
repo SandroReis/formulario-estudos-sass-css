@@ -1,0 +1,5 @@
+export * from './Aluno'
+export * from './Disciplina'
+export * from './Pessoa'
+export * from './Professor'
+export * from './Turma'
