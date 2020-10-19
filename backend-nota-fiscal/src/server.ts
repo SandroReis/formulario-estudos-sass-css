@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import cors from 'cors';
 
 import { Invoice } from './schemas/invoice'
 import { Product } from './schemas/product'
@@ -8,6 +9,7 @@ import bodyParser from 'body-parser'
 const app = express()
 
 app.use(bodyParser.json())
+app.use(cors())
 
 mongoose.connect(
     "mongodb://localhost:27017/invoice-api-web",
@@ -31,6 +33,7 @@ app.post('/product', async (req, res) => {
 })
 
 app.post('/invoice', async (req, res) => {
+    console.log('req.body', req.body)
     const invoice = new Invoice(req.body)
     const newInvoice = await Invoice.create(invoice)
     return res.json(newInvoice)
