@@ -1,4 +1,4 @@
-import { Produto } from './produto.model';
+import { Produto } from './produtoModel';
 
 export class NotaFiscal {
     constructor(

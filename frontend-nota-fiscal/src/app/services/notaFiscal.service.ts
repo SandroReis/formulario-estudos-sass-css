@@ -1,4 +1,4 @@
-import { NotaFiscal } from '../models/nota-fiscal.model';
+import { NotaFiscal } from '../models/notaFiscalModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -14,5 +14,9 @@ export class NotaFiscalService {
 
   create(notaFiscal: NotaFiscal): Observable<NotaFiscal> {
     return this.http.post<NotaFiscal>(this.baseUrl, notaFiscal)
+  }
+
+  getIssues() {
+    return this.http.get<NotaFiscal>(this.baseUrl)
   }
 }

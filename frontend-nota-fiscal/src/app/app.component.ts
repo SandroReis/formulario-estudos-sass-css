@@ -1,7 +1,7 @@
-import { NotaFiscalService } from './services/nota-fiscal.service';
+import { NotaFiscalService } from './services/notaFiscal.service';
 import { ProdutoService } from './services/produto.service';
-import { Produto } from './models/produto.model';
-import { NotaFiscal } from './models/nota-fiscal.model';
+import { Produto } from './models/produtoModel';
+import { NotaFiscal } from './models/notaFiscalModel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.produtoService.read().subscribe(produto => this.produtos = produto)
-    console.log('this.produtos', this.produtos)
+    this.notaFiscalService.getIssues().subscribe(notas => this.tabelaNotaFiscal = notas)
   }
 
   title = 'gerador de nota fiscal'
@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   listaQuantidade = []
 
   tabela = []
+  tabelaNotaFiscal
 
   totalItem: number
   totalFinal: number = 0
@@ -63,6 +64,7 @@ export class AppComponent implements OnInit {
       this.nomeClienteTabela = 'Cliente ' + this.nomeCliente
       this.nomeCliente = ''
     })
+    this.notaFiscalService.getIssues().subscribe(notas => this.tabelaNotaFiscal = notas)
   }
 
   novaNota() {

@@ -57,13 +57,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let i of tabela">
-              <td>{{ i.produto.codigo }}</td>
-              <td>{{ i.produto.descricao }}</td>
-              <td>{{ i.produto.valor }}</td>
-              <td>{{ i.produto.disconto + '%' }}</td>
-              <td>{{ i.qtd }}</td>
-              <td>{{ i.totalItem }}</td>
+            <tr *ngFor="let item of tabela">
+              <td>{{ item.produto.codigo }}</td>
+              <td>{{ item.produto.descricao }}</td>
+              <td>{{ item.produto.valor }}</td>
+              <td>{{ item.produto.disconto + '%' }}</td>
+              <td>{{ item.qtd }}</td>
+              <td>{{ item.totalItem }}</td>
             </tr>
           </tbody>
           <tfoot>
@@ -72,6 +72,23 @@
               <td class="totalGeral">{{ confirm_msg }}</td>
             </tr>
           </tfoot>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>ID Nota Fiscal</th>
+              <th>produtos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of tabelaNotaFiscal">
+              <td>{{ item.cliente }}</td>
+              <td>{{ item._id }}</td>
+              <td>{{ item.produtos }}</td>
+            </tr>
+          </tbody>
         </table>
     </div>
   </div>
