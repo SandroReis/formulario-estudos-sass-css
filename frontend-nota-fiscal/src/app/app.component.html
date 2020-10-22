@@ -6,87 +6,83 @@
       <div class="row mb-xlg">
         <div class="col-md-3">
           <div class="form-group">
-            <label>Nome</label>
-            <input type="text" class="form-control" name="nomeCliente" [(ngModel)]="nomeCliente">
+            <label>Codigo da turma</label>
+            <input type="number" class="form-control" name="codigoDisciplina" [(ngModel)]="codigoDisciplina">
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label>Produto</label>
-            <select class="custom-select" name="opcaoProduto" [(ngModel)]="produtoComprado">
-              <option *ngFor="let produto of produtos" [ngValue]="produto">{{ produto.descricao }}</option>
+            <label>Disciplina</label>
+            <select class="custom-select" name="disciplinaSelecionado" [(ngModel)]="disciplinaSelecionado">
+              <option *ngFor="let disciplina of disciplinas" [ngValue]="disciplina">{{ disciplina.nome }}</option>
             </select>
           </div>
+          <div class="form-group">
+          </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label>Quantidade desejada</label>
-            <input type="text" class="form-control" name="quantidade" [(ngModel)]="quantidade">
+            <label>Aluno</label>
+            <select class="custom-select" name="opcaoProduto" [(ngModel)]="alunoSelecionado">
+              <option *ngFor="let aluno of alunos" [ngValue]="aluno">{{ aluno.nome }}</option>
+            </select>
           </div>
         </div>
       </div>
       <div class="row mt-xlg mb-xlg">
         <div class="col-md-3">
-          <button class="btn btn-primary" (click)="incluirItem()">Inclui item</button>
+          <button class="btn btn-primary" (click)="incluirItem()">Matricular</button>
         </div>
         <div class="col-md-9" style="text-align: right;">
-          <button class="btn btn-success" (click)="fecharNota()">Fecha Nota</button>
-        </div>
-      </div>
-      <div class="row mb-xlg mt-xlg">
-        <div class="col-md-12" style="text-align: right;">
-          <button class="btn btn-secondary" (click)="novaNota()">Nova Nota</button>
+          <button class="btn btn-success" (click)="fecharTurma()">Fechar turma</button>
         </div>
       </div>
     </form>
-
     <hr>
-
-    <h2>{{ nomeClienteTabela }}</h2>
+    <label>Consultar turma por código</label>
+    <input type="number" class="" name="consultaTurma" [(ngModel)]="consultaTurma">
+    <div class="col-md-3">
+      <button class="btn btn-primary" (click)="consultarTumarSelecionada()">Consultar</button>
+    </div>
+    <h2>Turma Consultada</h2>
+    <br><br>
+    <div class="row tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Disciplina</th>
+            <th>Alunos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ turmaConsultada.codigo }}</td>
+            <td>{{ turmaConsultada.discipTurma.nome }}</td>
+            <td><p *ngFor="let itemAluno of turmaConsultada.listaAlunos">{{ itemAluno.nome }}, </p></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+    <h2>Alunos a serem matriculados:</h2>
+    <div *ngFor="let item of listaAlunos">
+      <p>Nome: {{ item.nome }} - Matricula: {{ item.nroMatric }}</p>
+    </div>
     <br> 
-    <div class="row mt-xlg tabela">
+    <div class="row tabela">
         <table>
           <thead>
             <tr>
               <th>Codigo</th>
-              <th>Descrição</th>
-              <th>Valor Unitário</th>
-              <th>desconto</th>
-              <th>Quantidade</th>
-              <th>Valor total com desconto</th>
+              <th>Disciplina</th>
+              <th>Alunos</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of tabela">
-              <td>{{ item.produto.codigo }}</td>
-              <td>{{ item.produto.descricao }}</td>
-              <td>{{ item.produto.valor }}</td>
-              <td>{{ item.produto.disconto + '%' }}</td>
-              <td>{{ item.qtd }}</td>
-              <td>{{ item.totalItem }}</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="5">Total da Nota</td>
-              <td class="totalGeral">{{ confirm_msg }}</td>
-            </tr>
-          </tfoot>
-        </table>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Cliente</th>
-              <th>ID Nota Fiscal</th>
-              <th>produtos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of tabelaNotaFiscal">
-              <td>{{ item.cliente }}</td>
-              <td>{{ item._id }}</td>
-              <td>{{ item.produtos }}</td>
+            <tr *ngFor="let item of turmas">
+              <td>{{ item.codigo }}</td>
+              <td>{{ item.discipTurma.nome }}</td>
+              <td><p *ngFor="let itemAluno of item.listaAlunos">{{ itemAluno.nome }}, </p></td>
             </tr>
           </tbody>
         </table>
